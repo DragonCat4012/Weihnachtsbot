@@ -7,7 +7,7 @@ Ein mini-discord.js-weinachtsbot mit 12 Aufgaben?
 * Sqlite3
 * Sequelize
 
-###
+### 🎁 Aufgaben? 🎁
 * EINS: Benutze den Befehl `test`
 * ZWEI: Begrüße jemanden mit `hi`
 * DREI: SpAm, Schreibe in einen Channel namens `spam`
