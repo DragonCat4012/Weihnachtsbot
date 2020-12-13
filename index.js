@@ -158,7 +158,6 @@ const initDatabase = async() => {
         for (let entr of(await Local_User.findAll())) client.database.UserCache.set(entr.user_id, entr);
         console.log(" > 🗸 Cached Database Entries");
     } catch (e) {
-        console.log(" > ❌ Error While Caching Database")
         console.log(e)
     }
 }
@@ -166,20 +165,7 @@ const initDatabase = async() => {
 const start = async() => {
     try {
         console.log("Logging in...");
-        await client.login(config.token).catch(e => {
-            switch (e.code) {
-                case 500:
-                    console.log(" > ❌ Fetch Error");
-                    break;
-                default:
-                    console.log(" > ❌ Unknown Error");
-                    break;
-            }
-            //Preventing instant Restart
-            setTimeout(() => { throw e }, 5000); //5 Second Timeout
-        });
-
-        console.log("Starting Database");
+        await client.login(config.token).catch();
         await initDatabase();
     } catch (e) {
         console.log(e);
